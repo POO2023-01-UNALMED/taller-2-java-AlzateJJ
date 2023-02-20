@@ -27,10 +27,10 @@ public int cantidadAsientos(){
 public String verificarIntegridad() {
 	if (this.registro==motor.registro){
 		for (int i=0; i<asientos.length;i++) {
-			if (asientos[i].registro==this.registro) {
-				//nada
-			} else {
-				return "Las piezas no son originales";
+			if (asientos[i]!=null) {
+				if (asientos[i].registro!=this.registro) {
+					return "Las piezas no son originales";
+				}
 			}
 		}
 	} else {
